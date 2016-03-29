@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 
 public class Main {
@@ -21,7 +20,15 @@ public class Main {
 				BufferedReader br = new BufferedReader(new FileReader(file));
 				while(br.ready()){
 				   String line = br.readLine();
-				   System.out.println(line);
+				   String[] parts = line.split("ç");
+				   String part1 = parts[0]; 
+				   String part2 = parts[1];
+				   String part3 = parts[2];
+				   String part4 = parts[3];
+				   System.out.println(part1);
+				   System.out.println(part2);
+				   System.out.println(part3);
+				   System.out.println(part4);
 				}
 				br.close();
 			}
