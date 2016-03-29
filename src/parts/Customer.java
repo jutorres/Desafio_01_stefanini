@@ -1,14 +1,14 @@
 package parts;
 
-public class Costumer {
+public class Customer {
 	private static String cnpj;
 	private static String name;
 	private static String area;
 	
-	public Costumer(String cnpj, String name, String area) {
-		Costumer.cnpj = cnpj;
-		Costumer.name = name;
-		Costumer.area = area;
+	public Customer(String cnpj, String name, String area) {
+		Customer.cnpj = cnpj;
+		Customer.name = name;
+		Customer.area = area;
 	}
 	
 	public static String getArea() {
