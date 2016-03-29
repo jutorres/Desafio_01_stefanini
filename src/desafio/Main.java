@@ -1,12 +1,7 @@
 package desafio;
 
-
-
-
 import java.io.IOException;
-
 import Reader.ReaderMethods;
-import parts.Salesman;
 
 
 public class Main {
@@ -15,6 +10,11 @@ public class Main {
 		
 		ReaderMethods r = new ReaderMethods();
 		r.readFile();
+		System.out.println(r);
+	
+		
+		
+		
 		
 		
 		

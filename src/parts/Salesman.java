@@ -1,28 +1,37 @@
 package parts;
 
 public class Salesman {
-	private String cpf;
-	private String name;
-	private String salary;
+	public static String cpf;
+	private static String name;
+	private static String salary;
 	
 	public Salesman(String cpf, String name, String salary) {
-		super();
-		this.cpf = cpf;
-		this.name = name;
-		this.salary = salary;
+		Salesman.cpf = cpf;
+		Salesman.name = name;
+		Salesman.salary = salary;
 	}
 
-	public String getCpf() {
+	public static String getCpf() {
 		return cpf;
 	}
 	
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	
-	public String getSalary() {
+	public static String getSalary() {
 		return salary;
 	}
+
+	@Override
+	public String toString() {
+		  return "Salesman:" + "\n" +
+				  		"CPF do vendedor: " + cpf + "\n" + 
+				  		"Nome do vendedor: " + name + "\n" +
+				  		"Salário do vendedor: " + salary;    
+		 }
+	
+	
 
 		
 	

@@ -1,25 +1,33 @@
 package parts;
 
 public class Costumer {
-	private String cnpj;
-	private String name;
-	private String area;
+	private static String cnpj;
+	private static String name;
+	private static String area;
 	
 	public Costumer(String cnpj, String name, String area) {
-		this.cnpj = cnpj;
-		this.name = name;
-		this.area = area;
+		Costumer.cnpj = cnpj;
+		Costumer.name = name;
+		Costumer.area = area;
 	}
 	
-	public String getArea() {
+	public static String getArea() {
 		return area;
 	}
 	
-	public String getCnpj() {
+	public static String getCnpj() {
 		return cnpj;
 	}
 	
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
+	
+	@Override
+	public String toString() {
+		  return "Costumer:" + "\n" +
+				  		"CNPJ do comprador: " + cnpj + "\n" + 
+				  		"Nome do comprador: " + name + "\n" +
+				  		"Área de trabalho: " + area;    
+		 }
 }
