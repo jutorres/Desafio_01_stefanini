@@ -1,25 +1,25 @@
 package parts;
 
 public class Item {
-	private static String idItem;
-	private static String quantity;
-	private static String price;
+	private int idItem;
+	private int quantity;
+	private double price;
 	
-	public Item(String idItem, String quantity, String price) {
-		Item.idItem = idItem;
-		Item.quantity = quantity;
-		Item.price = price;
+	public Item(int idItem, int quantity, double price) {
+		this.idItem = idItem;
+		this.quantity = quantity;
+		this.price = price;
  	}
 	
-	public static String getIdItem() {
+	public int getIdItem() {
 		return idItem;
 	}
 	
-	public static String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 	
-	public static String getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	

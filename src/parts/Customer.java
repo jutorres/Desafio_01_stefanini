@@ -1,25 +1,25 @@
 package parts;
 
 public class Customer {
-	private static String cnpj;
-	private static String name;
-	private static String area;
+	private String cnpj;
+	private String name;
+	private String area;
 	
 	public Customer(String cnpj, String name, String area) {
-		Customer.cnpj = cnpj;
-		Customer.name = name;
-		Customer.area = area;
+		this.cnpj = cnpj;
+		this.name = name;
+		this.area = area;
 	}
 	
-	public static String getArea() {
+	public String getArea() {
 		return area;
 	}
 	
-	public static String getCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
 	
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	

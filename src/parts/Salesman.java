@@ -1,25 +1,25 @@
 package parts;
 
 public class Salesman {
-	public static String cpf;
-	private static String name;
-	private static String salary;
+	public String cpf;
+	private String name;
+	private Double salary;
 	
-	public Salesman(String cpf, String name, String salary) {
-		Salesman.cpf = cpf;
-		Salesman.name = name;
-		Salesman.salary = salary;
+	public Salesman(String cpf, String name, Double salary) {
+		this.cpf = cpf;
+		this.name = name;
+		this.salary = salary;
 	}
 
-	public static String getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 	
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	public static String getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 

@@ -1,22 +1,30 @@
 package parts;
 
+import Reader.Repository;
+
 public class Sales {
-	    private static String saleId;
-		private static String name;
+	    private int saleId;
+		private String name;
+		private Repository itemList;
 		
 		
 		
-		public Sales(String saleId, String name) {
-			Sales.saleId = saleId;
-			Sales.name = name;
+		public Sales(int saleId, String name) {
+			this.saleId = saleId;
+			this.name = name;
 		}
 
-		public static String getSaleId() {
+		public int getSaleId() {
 			return saleId;
 		}
 		
-		public static String getName() {
+		public String getName() {
 			return name;
+		}
+		
+		public double getTotalValue() {
+			// TODO Auto-generated method stub
+			return 0;
 		}
 
 		@Override
@@ -25,8 +33,6 @@ public class Sales {
 					  	"ID da venda: " + saleId + "\n" + 
 					  	"Nome do vendedor: " + name + "\n";    
 			 }
-
-			
 }
 
 
