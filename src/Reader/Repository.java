@@ -2,6 +2,7 @@ package Reader;
 
 import java.util.ArrayList;
 import parts.Customer;
+import parts.Item;
 import parts.Sales;
 import parts.Salesman;
 
@@ -9,11 +10,13 @@ public class Repository {
 	private ArrayList<Salesman> salesmanList;
 	private ArrayList<Customer> customerList;
 	private ArrayList<Sales> salesList;
+	private ArrayList<Item> itemList;
 	
 	public Repository() {
 		this.salesmanList = new ArrayList<Salesman>();
 		this.customerList = new ArrayList<Customer>();
 		this.salesList = new ArrayList<Sales>();
+		this.itemList = new ArrayList<Item>();
 	}
 
 	public ArrayList<Salesman> getSalesmanList() {
@@ -28,14 +31,24 @@ public class Repository {
 		return salesList;
 	}
 	
-	public void addSalesman(Salesman salesman) {
-		getSalesmanList().add(salesman);
+	public ArrayList<Item> getItemList() {
+		return itemList;
 	}
-	public void addCustomer(Customer customer) {
-		getCustomerList().add(customer);
+	
+	public void add(Salesman salesman) {
+		salesmanList.add(salesman);
 	}
-	public void addSale(Sales sales) {
-		getSalesList().add(sales);
+
+	public void add(Customer customer) {
+		customerList.add(customer);
+	}
+
+	public void add(Sales sales) {
+		salesList.add(sales);
+	}
+	
+	public void add(Item itens) {
+		itemList.add(itens);
 	}
 	
 	@Override
@@ -43,13 +56,8 @@ public class Repository {
 		System.out.println("Salesmans size: " + getSalesmanList().size());
 		System.out.println("Customers size: " + getCustomerList().size());
 		System.out.println("Sales size: " + getSalesList().size());
+		System.out.println("Item size: " + getItemList().size());
 		return "";
 	}
-
-	public void add(Salesman salesman) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 }

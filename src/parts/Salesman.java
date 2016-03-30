@@ -28,7 +28,7 @@ public class Salesman {
 		  return "Salesman:" + "\n" +
 				  		"CPF do vendedor: " + cpf + "\n" + 
 				  		"Nome do vendedor: " + name + "\n" +
-				  		"Salário do vendedor: " + salary;    
+				  		"Salário do vendedor: " + salary + "\n";    
 		 }
 	
 	

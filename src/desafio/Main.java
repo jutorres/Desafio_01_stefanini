@@ -13,16 +13,9 @@ public class Main {
 		Repository repository = r.readFile();
 		
 		System.out.println(repository.getSalesmanList().toString());
-	
-		
-		
-		
-		
-		
-		
-		
-   		
-   		
+		System.out.println(repository.getCustomerList().toString());
+		System.out.println(repository.getSalesList().toString());
+		System.out.println(repository.getItemList().toString());
    		}
 		
 }

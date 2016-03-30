@@ -28,6 +28,6 @@ public class Customer {
 		  return "Costumer:" + "\n" +
 				  		"CNPJ do comprador: " + cnpj + "\n" + 
 				  		"Nome do comprador: " + name + "\n" +
-				  		"Área de trabalho: " + area;    
+				  		"Área de trabalho: " + area + "\n";    
 		 }
 }
