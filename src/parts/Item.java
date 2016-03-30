@@ -1,5 +1,7 @@
 package parts;
 
+import Reader.Repository;
+
 public class Item {
 	private int idItem;
 	private int quantity;

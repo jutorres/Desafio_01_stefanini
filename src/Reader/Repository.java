@@ -9,14 +9,14 @@ import parts.Salesman;
 public class Repository {
 	private ArrayList<Salesman> salesmanList;
 	private ArrayList<Customer> customerList;
-	private ArrayList<Sales> salesList;
-	private ArrayList<Item> itemList;
+	private static ArrayList<Sales> salesList;
+	private static ArrayList<Item> itemList;
 	
 	public Repository() {
 		this.salesmanList = new ArrayList<Salesman>();
 		this.customerList = new ArrayList<Customer>();
 		this.salesList = new ArrayList<Sales>();
-		this.itemList = new ArrayList<Item>();
+		Repository.itemList = new ArrayList<Item>();
 	}
 
 	public ArrayList<Salesman> getSalesmanList() {
@@ -27,11 +27,11 @@ public class Repository {
 		return customerList;
 	}
 	
-	public ArrayList<Sales> getSalesList() {
+	public static ArrayList<Sales> getSalesList() {
 		return salesList;
 	}
 	
-	public ArrayList<Item> getItemList() {
+	public static ArrayList<Item> getItemList() {
 		return itemList;
 	}
 	

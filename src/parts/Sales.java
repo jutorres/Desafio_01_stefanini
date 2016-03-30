@@ -7,8 +7,6 @@ public class Sales {
 		private String name;
 		private Repository itemList;
 		
-		
-		
 		public Sales(int saleId, String name) {
 			this.saleId = saleId;
 			this.name = name;
@@ -22,11 +20,14 @@ public class Sales {
 			return name;
 		}
 		
-		public double getTotalValue() {
-			// TODO Auto-generated method stub
-			return 0;
+		public Double getTotalValue(){
+			  double totalValue = 0;
+				  for (Item item: Repository.getItemList()) {
+				   totalValue += (item.getPrice() * item.getQuantity()); 
+				  }
+			  return totalValue;
 		}
-
+		
 		@Override
 		public String toString() {
 			  return "Sales: " + "\n" +

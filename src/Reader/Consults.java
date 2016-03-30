@@ -1,5 +1,8 @@
 package Reader;
 
+import java.util.Comparator;
+import java.util.Optional;
+
 import parts.Item;
 import parts.Sales;
 import parts.Salesman;
@@ -7,14 +10,14 @@ import parts.Salesman;
 public class Consults {
 	private int amountCustomers;
 	private int amountSalesman;
-//	private int idMostExpensiveSale;
-//	private Salesman worstSalesman;
+	private Item idMostExpensiveSale;
+	private Item worstSalesman;
 	
 	public Consults(Repository repository) {
 		amountCustomersCount(repository);
 		amountSalesmanCount(repository);
-//		setIdMostExpensiveSale(getMostExpensiveSale(repository));
-//		setWorstSalesman(getWorstSalesmanEver(repository));
+		idMostExpensiveSale(repository);
+		WorstSalesman(repository);
 	}
 	
 //	private Object getWorstSalesmanEver(Repository repository) {
@@ -27,6 +30,24 @@ public class Consults {
 //		return null;
 //	}
 	
+	private void WorstSalesman(Repository repository) {
+		Sales sales = Repository.getSalesList().stream().min(Comparator.comparing(Sales::getTotalValue)).get();
+		System.out.println(sales.getName());
+	}
+
+	private void idMostExpensiveSale(Repository repository) {
+		Sales sales = Repository.getSalesList().stream().max(Comparator.comparing(Sales::getTotalValue)).get();
+		System.out.println(sales.getSaleId());
+	}
+	
+	public Item getWorstSalesman() {
+		return worstSalesman;
+	}
+
+	public Item getIdMostExpensiveSale() {
+		return idMostExpensiveSale;
+	}
+
 	public int getAmountCustomers() {
 		return amountCustomers;
 	}
@@ -34,14 +55,6 @@ public class Consults {
 	public int getAmountSalesman() {
 		return amountSalesman;
 	}
-	
-//	public int getIdMostExpensiveSale() {
-//		return idMostExpensiveSale;
-//	}
-//	
-//	public Salesman getWorstSalesman() {
-//		return worstSalesman;
-//	}
 	
 	private void amountCustomersCount(Repository repository) {
 		amountCustomers = repository.getCustomerList().size();
@@ -54,10 +67,8 @@ public class Consults {
 	public String toString() {
 		return "DataAnalyzer [amountCustomers=" + amountCustomers +
 				", amountSalesman=" + amountSalesman +
-//				", idMostExpensiveSale=" + idMostExpensiveSale +
+				", idMostExpensiveSale=" + idMostExpensiveSale +
 //				", worstSalesman=" + worstSalesman.getName() +
 				"]";
 	}
-	
-	
 }

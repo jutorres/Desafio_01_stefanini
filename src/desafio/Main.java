@@ -14,10 +14,10 @@ public class Main {
 		ReaderMethods r = new ReaderMethods();
 		Repository repository = r.readFile();
 		
-		System.out.println(repository.getSalesmanList().toString());
-		System.out.println(repository.getCustomerList().toString());
-		System.out.println(repository.getSalesList().toString());
-		System.out.println(repository.getItemList().toString());
+//		System.out.println(repository.getSalesmanList().toString());
+//		System.out.println(repository.getCustomerList().toString());
+//		System.out.println(repository.getSalesList().toString());
+//		System.out.println(repository.getItemList().toString());
 		
 		Consults c = new Consults(repository);
 		System.out.println(c);
