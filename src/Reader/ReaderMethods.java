@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import parts.Customer;
 import parts.Sales;
@@ -20,34 +19,37 @@ public class ReaderMethods {
 	String part3;
 	String part4;
 	
-	public void readFile() throws IOException {
-	for (File file : folder.listFiles()) {
-		if (file.getName().endsWith(".dat")) {
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			while(br.ready()){
-			   String line = br.readLine();
-			   String[] parts = line.split("ç");
-			   part1 = parts[0]; 
-			   part2 = parts[1];
-			   part3 = parts[2];
-			   part4 = parts[3];
-//			   Arrays.stream(parts).forEach(System.out::println);
-			   if (part1.equals("001")) {
-					Salesman salesman = new Salesman(part2, part3, part4);
-					System.out.println(salesman.toString());
-			   } else if (part1.equals("002")) {
-				    Customer customer = new Customer(part2, part3, part4);
-					System.out.println(customer.toString());
-			   } else if (part1.equals("003")) {
-				    Sales sales = new Sales(part2, part3, part4);
-					System.out.println(sales.toString());
-			   }
+	public Repository readFile() throws IOException {
+		Repository repository = new Repository();
+		for (File file : folder.listFiles()) {
+			if (file.getName().endsWith(".dat")) {
+				@SuppressWarnings("resource")
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				while(br.ready()){
+				   String line = br.readLine();
+				   String[] parts = line.split("ç");
+				   part1 = parts[0]; 
+				   part2 = parts[1];
+				   part3 = parts[2];
+				   part4 = parts[3];
+	//			   Arrays.stream(parts).forEach(System.out::println);
+				   if (part1.equals("001")) {
+						Salesman salesman = new Salesman(part2, part3, part4);
+						repository.add(salesman);
+				   } else if (part1.equals("002")) {
+					    Customer customer = new Customer(part2, part3, part4);
+						repository.add(customer);
+				   } else if (part1.equals("003")) {
+					    Sales sales = new Sales(part2, part3, part4);
+						repository.add(sales);
+				   }
+				}
+	//			System.out.println("Nenhum arquivo com esta extensão encontrado");
+				}
 			}
-//			System.out.println("Nenhum arquivo com esta extensão encontrado");
-			}
+			return repository;
 		}
-	}
-		
+			
 	}
 	
 

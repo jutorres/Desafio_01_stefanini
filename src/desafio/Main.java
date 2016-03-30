@@ -2,6 +2,7 @@ package desafio;
 
 import java.io.IOException;
 import Reader.ReaderMethods;
+import Reader.Repository;
 
 
 public class Main {
@@ -9,8 +10,9 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		
 		ReaderMethods r = new ReaderMethods();
-		r.readFile();
-		System.out.println(r);
+		Repository repository = r.readFile();
+		
+		System.out.println(repository.getSalesmanList().toString());
 	
 		
 		

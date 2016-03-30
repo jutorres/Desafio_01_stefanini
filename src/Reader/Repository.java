@@ -5,12 +5,12 @@ import parts.Customer;
 import parts.Sales;
 import parts.Salesman;
 
-public class JoinLists {
+public class Repository {
 	private ArrayList<Salesman> salesmanList;
 	private ArrayList<Customer> customerList;
 	private ArrayList<Sales> salesList;
 	
-	public JoinLists() {
+	public Repository() {
 		this.salesmanList = new ArrayList<Salesman>();
 		this.customerList = new ArrayList<Customer>();
 		this.salesList = new ArrayList<Sales>();
@@ -44,6 +44,11 @@ public class JoinLists {
 		System.out.println("Customers size: " + getCustomerList().size());
 		System.out.println("Sales size: " + getSalesList().size());
 		return "";
+	}
+
+	public void add(Salesman salesman) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
