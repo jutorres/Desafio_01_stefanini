@@ -1,11 +1,9 @@
 package Reader;
 
 import java.util.Comparator;
-import java.util.Optional;
 
 import parts.Item;
 import parts.Sales;
-import parts.Salesman;
 
 public class Consults {
 	private int amountCustomers;
@@ -19,25 +17,15 @@ public class Consults {
 		idMostExpensiveSale(repository);
 		WorstSalesman(repository);
 	}
-	
-//	private Object getWorstSalesmanEver(Repository repository) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	private Object getMostExpensiveSale(Repository repository) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-	
-	private void WorstSalesman(Repository repository) {
+		
+	private String WorstSalesman(Repository repository) {
 		Sales sales = Repository.getSalesList().stream().min(Comparator.comparing(Sales::getTotalValue)).get();
-		System.out.println(sales.getName());
+		return sales.getName();
 	}
 
-	private void idMostExpensiveSale(Repository repository) {
+	private int idMostExpensiveSale(Repository repository) {
 		Sales sales = Repository.getSalesList().stream().max(Comparator.comparing(Sales::getTotalValue)).get();
-		System.out.println(sales.getSaleId());
+		return sales.getSaleId();
 	}
 	
 	public Item getWorstSalesman() {
@@ -67,8 +55,8 @@ public class Consults {
 	public String toString() {
 		return "DataAnalyzer [amountCustomers=" + amountCustomers +
 				", amountSalesman=" + amountSalesman +
-				", idMostExpensiveSale=" + idMostExpensiveSale +
-//				", worstSalesman=" + worstSalesman.getName() +
+				", idMostExpensiveSale=" + idMostExpensiveSale(null) +
+				", worstSalesman=" + WorstSalesman(null) +
 				"]";
 	}
 }
