@@ -18,6 +18,9 @@ public class Consults {
 		WorstSalesman(repository);
 	}
 		
+	public Consults() {
+	}
+
 	private String WorstSalesman(Repository repository) {
 		Sales sales = Repository.getSalesList().stream().min(Comparator.comparing(Sales::getTotalValue)).get();
 		return sales.getName();

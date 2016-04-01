@@ -37,7 +37,7 @@ public class ReaderMethods {
 						String line = br.readLine();
 						line = line.replace("[", "");
 						line = line.replace("]", "");
-						String[] parts = line.split("็");
+						String[] parts = line.split("รง");
 						part1 = parts[0]; 
 						part2 = parts[1];
 						part3 = parts[2];

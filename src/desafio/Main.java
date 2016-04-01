@@ -14,20 +14,19 @@ public class Main {
 		
 		ReaderMethods r = new ReaderMethods();
 		Repository repository = r.readFile();
-		WriterMethod w = new WriterMethod();
 		
+		WriterMethod w = new WriterMethod();
+		w.writeFile();
+		
+		Consults c = new Consults(repository);
+		String str = c.toString();
+				
 //		System.out.println(repository.getSalesmanList().toString());
 //		System.out.println(repository.getCustomerList().toString());
 //		System.out.println(repository.getSalesList().toString());
 //		System.out.println(repository.getItemList().toString());
 		
-		Consults c = new Consults(repository);
-		System.out.println(c);
-		
-		String str = c.toString();
-		w.fileWriter();
-//		write(c.toString());
-		
+		System.out.println(str);
    		}
 		
 }
