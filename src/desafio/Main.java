@@ -19,14 +19,7 @@ public class Main {
 		w.writeFile();
 		
 		Consults c = new Consults(repository);
-		String str = c.toString();
-				
-//		System.out.println(repository.getSalesmanList().toString());
-//		System.out.println(repository.getCustomerList().toString());
-//		System.out.println(repository.getSalesList().toString());
-//		System.out.println(repository.getItemList().toString());
-		
-		System.out.println(str);
+		System.out.println(c);
    		}
 		
 }
